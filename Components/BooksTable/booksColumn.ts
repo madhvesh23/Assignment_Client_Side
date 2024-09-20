@@ -1,0 +1,82 @@
+import { User } from "@/types/booksType";
+import { MRT_ColumnDef } from "mantine-react-table";
+
+const formatDate = (dateString: string) => {
+  const date = new Date(dateString);
+  return date.toISOString().split("T")[0];
+};
+export const booksColumn: MRT_ColumnDef<User>[] = [
+  {
+    accessorKey: "id",
+    header: "Id",
+    enableColumnActions: false,
+    enableColumnFilter: false,
+    size: 120,
+    mantineTableHeadCellProps: { align: "left" },
+    mantineTableBodyCellProps: { align: "left" },
+    enableColumnDragging: false,
+    enableSorting: false,
+    enableColumnFilterModes: false,
+  },
+  {
+    accessorKey: "title",
+    header: "Title",
+    enableColumnActions: false,
+    enableColumnFilter: true,
+    size: 120,
+    mantineTableHeadCellProps: { align: "left" },
+    mantineTableBodyCellProps: { align: "left" },
+    enableColumnDragging: false,
+    enableSorting: false,
+    enableColumnFilterModes: false,
+  },
+  {
+    accessorKey: "author",
+    header: "Author",
+    enableColumnActions: false,
+    enableColumnFilter: true,
+    size: 120,
+    mantineTableHeadCellProps: { align: "left" },
+    mantineTableBodyCellProps: { align: "left" },
+    enableColumnDragging: false,
+    enableSorting: false,
+    enableColumnFilterModes: false,
+  },
+  {
+    accessorKey: "genre",
+    header: "genre",
+    enableColumnActions: false,
+    enableColumnFilter: true,
+    size: 120,
+    mantineTableHeadCellProps: { align: "left" },
+    mantineTableBodyCellProps: { align: "left" },
+    enableColumnDragging: false,
+    enableSorting: false,
+    enableColumnFilterModes: false,
+  },
+  {
+    accessorKey: "publication_date",
+    header: "PUBLICATION DATE",
+    enableColumnActions: false,
+    enableColumnFilter: false,
+    size: 120,
+    mantineTableHeadCellProps: { align: "left" },
+    mantineTableBodyCellProps: { align: "left" },
+    enableColumnDragging: false,
+    enableSorting: false,
+    enableColumnFilterModes: false,
+    Cell: ({ cell }) => formatDate(cell.getValue<string>()),
+  },
+  {
+    accessorKey: "isbn",
+    header: "isbn",
+    enableColumnActions: false,
+    enableColumnFilter: true,
+    size: 120,
+    mantineTableHeadCellProps: { align: "left" },
+    mantineTableBodyCellProps: { align: "left" },
+    enableColumnDragging: false,
+    enableSorting: false,
+    enableColumnFilterModes: false,
+  },
+];
